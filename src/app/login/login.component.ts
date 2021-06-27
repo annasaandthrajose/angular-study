@@ -23,21 +23,23 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-accchange(event:any){
-this.acno=event.target.value;
-console.log(this.acno);
+// accchange(event:any){
+// this. acno=event.target.value;
+// console.log(this.acno);
 
-}
-pswdchange(event:any){
-  this.pswd=event.target.value;
-  console.log(this.pswd);
+// }
+// pswdchange(event:any){
+//   this.pswd=event.target.value;
+//   console.log(this.pswd);
   
-  }
-  login()
+//   }
+  login(a:any,p:any)
 
 {
-  var acno=this.acno
-  var pswd=this.pswd
+  
+  var acno=a.value
+  
+  var pswd=p.value
   let users=this.accountDetails
   if(acno in users){
     if(pswd==users[acno]["password"])//entered acno ku corresponding ayitulla password users il undo

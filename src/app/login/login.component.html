@@ -20,15 +20,15 @@
         <form>
             <div class="mb-3">
               <label for="acno" class="form-label">Account number</label>
-              <input type="text" class="form-control" id="acno" [value]="acno" (change)="accchange($event)"aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="acno" [value]="acno" #accno aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
               <label for="pwd" class="form-label">Password</label>
-              <input type="password" class="form-control" (change)="pswdchange($event)" id="pwd">
+              <input type="password" class="form-control" #pswd id="pwd">
             </div>
             
-            <button type="button" (click)="login()"  class="btn btn-primary">Submit</button>
+            <button type="button" (click)="login(accno,pswd)"  class="btn btn-primary">Submit</button>
           </form>
 
     </div>
