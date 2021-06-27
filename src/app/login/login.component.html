@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4"><h1>WELCOME SBK</h1>
+        
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <h2>{{aim}}</h2>
+        <form>
+            <div class="mb-3">
+              <label for="acno" class="form-label">Account number</label>
+              <input type="text" class="form-control" id="acno" [value]="acno" (change)="accchange($event)"aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password</label>
+              <input type="password" class="form-control" (change)="pswdchange($event)" id="pwd">
+            </div>
+            
+            <button type="button" (click)="login()"  class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+    
+</body>
+</html>
