@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   aim="Your Perfect Banking Partner"
-  acno="Account Number Please"
+  acno=""
   pswd=""
   accountDetails={
     1000:{acno:1000,username:"userone",balance:5000,password:"user1"},
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     
 
     }
-  constructor() { }
+  constructor(private router :Router) { }
   
 
   ngOnInit(): void {
@@ -33,19 +34,20 @@ export class LoginComponent implements OnInit {
 //   console.log(this.pswd);
   
 //   }
-  login(a:any,p:any)
+  login()
 
 {
   
-  var acno=a.value
+  var acno=this.acno
   
-  var pswd=p.value
+  var pswd=this.pswd
   let users=this.accountDetails
   if(acno in users){
     if(pswd==users[acno]["password"])//entered acno ku corresponding ayitulla password users il undo
     //the acno is user entered not in database
     {
       alert("Login sucessful")
+      this.router.navigateByUrl("dashboard")
     }
 
 else{
@@ -56,5 +58,8 @@ else{
 else{
   alert("Invalid Account")
 }
+}
+register(){
+  this.router.navigateByUrl("register")
 }
 }

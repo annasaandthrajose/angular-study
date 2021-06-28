@@ -16,11 +16,16 @@
             </div>
             <div class="col-4"></div>
         </div>
-        <h2>{{aim}}</h2>
+        <h2>Register Form</h2>
         <form>
             <div class="mb-3">
+                <label for="uname" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="acno"  [(ngModel)]="uname" name="un"aria-describedby="emailHelp">
+                
+              </div>
+            <div class="mb-3">
               <label for="acno" class="form-label">Account number</label>
-              <input type="text" class="form-control" id="acno" [value]="acno" [(ngModel)]="acno" name="ac"aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="acno" [(ngModel)]="acno" name="ac"aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
@@ -28,7 +33,7 @@
               <input type="password" class="form-control" [(ngModel)]="pswd" id="pwd" name="ps">
             </div>
             
-            <button type="button" (click)="login()"  class="btn btn-primary">Submit</button>
+            
             <br>
             <br>
             <button type="button" class="btn btn-primary" (click)="register()">Create New Account</button>
@@ -38,3 +43,4 @@
     
 </body>
 </html>
+
